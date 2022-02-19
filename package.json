@@ -1,0 +1,32 @@
+{
+	"name": "teradek-vidiux",
+	"version": "1.0.0",
+	"api_version": "1.0.0",
+	"keywords": [
+		"vidiu",
+		"encoder"
+	],
+	"manufacturer": "Teradek",
+	"product": [
+		"VidiU X"
+	],
+	"shortname": "teradek-vidiux",
+	"description": "Companion module for Teradek VidiU X",
+	"main": "src/index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Joseph Adams <josephdadams@gmail.com>",
+	"license": "MIT",
+	"homepage": "https://github.com/bitfocus/companion-module-teradek-vidiux#readme",
+	"bugs": {
+		"url": "https://github.com/bitfocus/companion-module-teradek-vidiux/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-module-teradek-vidiux.git"
+	},
+	"dependencies": {
+		"mqtt": "^4.3.5"
+	}
+}
