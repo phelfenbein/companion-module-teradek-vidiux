@@ -37,6 +37,8 @@ module.exports = {
 					choices: [
 						{ id: 'publish', label: 'Publish' },
 						{ id: 'unpublish', label: 'Unpublish' },
+						{ id: 'Sharelink/publish', label: 'Sharelink Publish' },
+						{ id: 'Sharelink/unpublish', label: 'Sharelink Unpublish' },
 						{ id: 'broadcast', label: 'Broadcast' },
 						{ id: 'halt', label: 'Halt' },
 						{ id: 'cancel', label: 'Cancel' },
