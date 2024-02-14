@@ -3,11 +3,12 @@ module.exports = {
 	// #### Instance Actions ####
 	// ##########################
 
-	initActions: function () {
-		let actions = {}
+	setActions: function (i) {
+		let self = i;
+		let actions = {};
 
 		actions.recordingControl = {
-			name: 'Recording Control',
+			label: 'Recording Control',
 			options: [
 				{
 					type: 'dropdown',
@@ -16,17 +17,17 @@ module.exports = {
 					default: 'start',
 					choices: [
 						{ id: 'start', label: 'Start' },
-						{ id: 'stop', label: 'Stop' },
-					],
-				},
+						{ id: 'stop', label: 'Stop' }
+					]
+				}
 			],
-			callback: async (action) => {
-				this.sendCommand(this.recPrefix + '/' + action.options.command, {})
-			},
-		}
+			callback: function (action, bank) {
+				self.sendCommand(self.recPrefix + '/' + action.options.command, {});
+			}
+		};
 
 		actions.streamingControl = {
-			name: 'Streaming Control',
+			label: 'Streaming Control',
 			options: [
 				{
 					type: 'dropdown',
@@ -43,15 +44,15 @@ module.exports = {
 						{ id: 'cancel', label: 'Cancel' },
 						{ id: 'preview', label: 'Preview' },
 						{ id: 'endpreview', label: 'End Preview' },
-						{ id: 'complete', label: 'Complete' },
-					],
-				},
+						{ id: 'complete', label: 'Complete' }
+					]
+				}
 			],
-			callback: async (action) => {
-				this.sendCommand(this.streamPrefix + '/' + action.options.command, {})
-			},
-		}
+			callback: function (action, bank) {
+				self.sendCommand(self.streamPrefix + '/' + action.options.command, {});
+			}
+		};
 
-		this.setActionDefinitions(actions)
-	},
+		return actions;
+	}
 }

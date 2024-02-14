@@ -1,25 +1,25 @@
-const { combineRgb } = require('@companion-module/base')
-
 module.exports = {
 	// ##########################
 	// #### Define Feedbacks ####
 	// ##########################
-	initFeedbacks: function () {
-		let feedbacks = {}
+	setFeedbacks: function (i) {
+		let self = i;
+		let feedbacks = {};
 
-		const foregroundColor = combineRgb(255, 255, 255) // White
-		const foregroundColorBlack = combineRgb(0, 0, 0) // Black
-		const backgroundColorRed = combineRgb(255, 0, 0) // Red
-		const backgroundColorGreen = combineRgb(0, 255, 0) // Green
-		const backgroundColorOrange = combineRgb(255, 102, 0) // Orange
-		const backgroundColorBlue = combineRgb(0, 0, 255) // Blue
-		const backgroundColorGray = combineRgb(128, 128, 128) // Gray
+		const foregroundColor = self.rgb(255, 255, 255); // White
+		const foregroundColorBlack = self.rgb(0, 0, 0); // Black
+		const backgroundColorRed = self.rgb(255, 0, 0); // Red
+		const backgroundColorGreen = self.rgb(0, 255, 0); // Green
+		const backgroundColorOrange = self.rgb(255, 102, 0); // Orange
+		const backgroundColorBlue = self.rgb(0, 0, 255); // Blue
+		const backgroundColorGray = self.rgb(128, 128, 128); // Gray
 
+		
 		feedbacks.recordingState = {
 			type: 'boolean',
-			name: 'Recording',
+			label: 'Recording',
 			description: 'Indicate Device Recording State',
-			defaultStyle: {
+			style: {
 				color: foregroundColor,
 				bgcolor: backgroundColorRed,
 			},
@@ -35,26 +35,26 @@ module.exports = {
 						{ id: 'Invalid', label: 'Invalid' },
 						{ id: 'Not Ready', label: 'Not Ready' },
 						{ id: 'Preparing', label: 'Preparing' },
-						{ id: 'Offline', label: 'Offline' },
+						{ id: 'Offline', label: 'Offline' }
 					],
 				},
 			],
-			callback: (feedback) => {
+			callback: function (feedback, bank) {
 				var opt = feedback.options
 
-				if (this.data.recordingState === opt.option) {
-					return true
+				if (self.data.recordingState === opt.option) {
+					return true;
 				}
 
-				return false
-			},
-		}
+				return false;
+			}
+		};
 
 		feedbacks.streamingState = {
 			type: 'boolean',
-			name: 'Streaming',
+			label: 'Streaming',
 			description: 'Indicate Device Streaming State',
-			defaultStyle: {
+			style: {
 				color: foregroundColor,
 				bgcolor: backgroundColorRed,
 			},
@@ -68,21 +68,21 @@ module.exports = {
 						{ id: 'Live', label: 'Live' },
 						{ id: 'Ready', label: 'Ready' },
 						{ id: 'Playing', label: 'Playing' },
-						{ id: 'Invalid', label: 'Invalid' },
+						{ id: 'Invalid', label: 'Invalid' }
 					],
 				},
 			],
-			callback: (feedback) => {
+			callback: function (feedback, bank) {
 				var opt = feedback.options
 
-				if (this.data.streamingState === opt.option) {
-					return true
+				if (self.data.streamingState === opt.option) {
+					return true;
 				}
 
-				return false
-			},
-		}
+				return false;
+			}
+		};
 
-		this.setFeedbackDefinitions(feedbacks)
-	},
+		return feedbacks;
+	}
 }

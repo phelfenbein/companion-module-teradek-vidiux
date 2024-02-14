@@ -14,7 +14,7 @@ The actions are separated into the following categories:
 
 **Streaming**
 
-_Depending on your streaming platform, you may need to determine which of these actions will control your stream. The default is Publish/Unpublish._
+*Depending on your streaming platform, you may need to determine which of these actions will control your stream. The default is Publish/Unpublish.*
 
 - Publish
 - Unpublish
@@ -40,14 +40,14 @@ _Depending on your streaming platform, you may need to determine which of these 
 ## Feedbacks
 
 - Device Recording State
-  - Recording
-  - Ready
-  - Invalid
-  - Not Ready
-  - Preparing
-  - Offline
+	- Recording
+	- Ready
+	- Invalid
+	- Not Ready
+	- Preparing
+	- Offline
 - Device Streaming State
-  - Live
-  - Ready
-  - Playing
-  - Invalid
+	- Live
+	- Ready
+	- Playing
+	- Invalid

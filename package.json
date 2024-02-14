@@ -1,26 +1,32 @@
 {
 	"name": "teradek-vidiux",
-	"version": "2.0.0",
+	"version": "1.0.1",
+	"api_version": "1.0.0",
+	"keywords": [
+		"vidiu",
+		"encoder"
+	],
+	"manufacturer": "Teradek",
+	"product": [
+		"VidiU X"
+	],
+	"shortname": "teradek-vidiux",
+	"description": "Companion module for Teradek VidiU X",
 	"main": "src/index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"format": "prettier -w .",
-		"lint:raw": "eslint --ext .ts --ext .js --ignore-pattern dist --ignore-pattern pkg",
-		"lint": "yarn lint:raw ."
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
+	"author": "Joseph Adams <josephdadams@gmail.com>",
 	"license": "MIT",
-	"prettier": "@companion-module/tools/.prettierrc.json",
+	"homepage": "https://github.com/bitfocus/companion-module-teradek-vidiux#readme",
+	"bugs": {
+		"url": "https://github.com/bitfocus/companion-module-teradek-vidiux/issues"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/bitfocus/companion-module-teradek-vidiux.git"
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.6.0",
-		"bufferutil": "^4.0.8",
-		"mqtt": "^5.3.1",
-		"utf-8-validate": "^6.0.3"
-	},
-	"devDependencies": {
-		"@companion-module/tools": "^1.4.1"
+		"mqtt": "^4.3.5"
 	}
 }
